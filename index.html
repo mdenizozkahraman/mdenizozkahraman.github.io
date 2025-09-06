@@ -1,11 +1,101 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Mehmet Deniz Özkahraman</title>
+    <title>Mehmet Deniz Özkahraman - Portfolyo</title>
 </head>
-  
-<body>
-  <p>selam ben mehmet deniz özkahraman</p>
+<body style="
+    background-color: white;
+    color: black;
+    font-family: courier;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+">
+    <div style="position: fixed; top: 50px; right: 100px;">
+        <button id="lang-toggle" style="background-color: transparent; border: 1px solid black; color: black; padding: 5px 10px; cursor: pointer; font-family: courier; font-size: 1.2em;">EN</button>
+    </div>
 
+    <div style="text-align: center;">
+        <img src="https://github.com/mdenizozkahraman/mdenizozkahraman.github.io/blob/main/assets/photo.jpg?raw=true" alt="Mehmet Deniz Özkahraman" style="width: 200px; height: 200px; border: 2px solid black;">
+        
+        <br><br>
+
+        <h1 id="greeting">Merhaba, ben Mehmet Deniz Özkahraman.</h1>
+        <p id="bio-text">Siber Güvenlik, Bilgisayar Ağları ve Bulut Bilişim ile ilgileniyorum.</p>
+
+        <hr style="width: 50%;">
+        
+        <h2 id="certificates-title">Sertifikalarım</h2>
+        
+        <p>
+            <a href="https://drive.google.com/file/d/1U-dBQc6oBGmdu_dUDrvUaslG0Lp2hrcw/view?usp=sharing">eJPT</a> | 
+            <a href="https://drive.google.com/file/d/1jYahVZ8zk4IanKuxNQ9dqe6KFDoTRWQZ/view?usp=drive_link">ICCA</a> | 
+            <a href="https://drive.google.com/file/d/1c_0TKksSfQlk01LWDO7_fVdSVYtotWhT/view?usp=drive_link">CNSP</a>  
+        </p>
+
+        <hr style="width: 50%;">
+
+        
+
+        <h2 id="links-title">Sosyal Medya ve Diğer Bağlantılar</h2>
+        
+        <p>
+            <a href="https://github.com/mdenizozkahraman">GitHub</a> | 
+            <a href="https://drive.google.com/file/d/1RhHypF4gFwEslAbBBONL53cBYKqXKB6s/view?usp=sharing">CV</a> | 
+            <a href="https://www.linkedin.com/in/mdenizozkahraman/">LinkedIn</a> | 
+            <a href="https://www.youtube.com/@mehmetdenizozkahraman-mdo">YouTube</a> |
+            <a href="https://x.com/denizozkahraman">X (Twitter)</a>
+        </p>
+    </div>
+
+    <script>
+        const langToggleBtn = document.getElementById('lang-toggle');
+        const greeting = document.getElementById('greeting');
+        const bioText = document.getElementById('bio-text');
+        const certificatesTitle = document.getElementById('certificates-title');
+        const projectsTitle = document.getElementById('projects-title');
+        const linksTitle = document.getElementById('links-title');
+
+        const translations = {
+            tr: {
+                greeting: "Merhaba, ben Mehmet Deniz Özkahraman.",
+                bio: "Siber Güvenlik, Network ve Bulut Bilişim ile ilgileniyorum.",
+                certificates: "Sertifikalarım",
+                projects: "Projelerim",
+                links: "Sosyal Medya ve Diğer Bağlantılar"
+            },
+            en: {
+                greeting: "Hello, I am Mehmet Deniz Özkahraman.",
+                bio: "I'm interested in Cybersecurity, Networking, and Cloud Computing.",
+                certificates: "Certificates",
+                projects: "Projects",
+                links: "Social Media and Other Links"
+            }
+        };
+
+        let currentLang = 'tr';
+
+        langToggleBtn.addEventListener('click', () => {
+            if (currentLang === 'tr') {
+                currentLang = 'en';
+                langToggleBtn.textContent = 'TR';
+            } else {
+                currentLang = 'tr';
+                langToggleBtn.textContent = 'EN';
+            }
+            updateTextContent();
+        });
+
+        function updateTextContent() {
+            const lang = translations[currentLang];
+            greeting.textContent = lang.greeting;
+            bioText.textContent = lang.bio;
+            certificatesTitle.textContent = lang.certificates;
+            projectsTitle.textContent = lang.projects;
+            linksTitle.textContent = lang.links;
+        }
+    </script>
 </body>
 </html>
