@@ -1,1 +1,0 @@
-# mdenizozkahraman.github.io
